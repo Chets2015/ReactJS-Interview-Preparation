@@ -1,0 +1,57 @@
+
+next →← prev
+Difference between ReactJS and React Native
+ReactJS
+ReactJS is an open-source JavaScript library used to build the user interface for Web Applications. It is responsible only for the view layer of the application. It provides developers to compose complex UIs from a small and isolated piece of code called "components." ReactJS made of two parts first is components, that are the pieces that contain HTML code and what you want to see in the user interface, and the second one is HTML document where all your components will be rendered.
+
+Jordan Walke, who was a software engineer at Facebook, develops it. Initially, it was developed and maintained by Facebook and was later used in its products like WhatsApp & Instagram. Facebook developed ReactJS in 2011 for the newsfeed section, but it was released to the public in May 2013.
+
+Advantage of ReactJS
+Easy to Learn and Use: ReactJS is much easier to learn and use. Any developer who comes from a JavaScript background can easily understand and start creating web apps using React.
+Creating Dynamic Web Applications Becomes Easier: To create a dynamic web application specifically with HTML was tricky, which requires complex coding, but React JS solved that issue and makes it easier. It provides less coding and gives more functionality.
+Reusable Components: A ReactJS web application is made up of multiple components, and each component has its logic and controls. These components can be reused wherever you need them. The reusable code helps to make your apps easier to develop and maintain.
+Performance Enhancement: ReactJS improves performance due to virtual DOM. The React Virtual DOM exists entirely in memory and is a representation of the web browser's DOM. Due to this, when we write a React component, we did not write directly to the DOM. Instead, we are writing virtual components that react will turn into the DOM, leading to smoother and faster performance.
+The Support of Handy Tools: ReactJS support a handy set of tools which make the task of the developers understandable and easier. It also allows you to select particular components and examine and edit their current Props and State.
+Disadvantage of ReactJS
+The high pace of development: As we know, the frameworks continually changes so fast. The developers are not feeling comfortable to re-learn the new ways of doing things regularly. It may be hard for them to adopt all these changes with all the continuous updates.
+Poor Documentation: React technologies updating and accelerating so fast that there is no time to make proper documentation. To overcome this, developers write instructions on their own with the evolving of new releases and tools in their current projects.
+View Part: ReactJS covers only the UI Layers of the app and nothing else. So you still need to choose some other technologies to get a complete tooling set for development in the project.
+Known to be SEO Friendly: Traditional JavaScript frameworks have an issue in dealing with SEO. ReactJS overcomes this problem, which helps developers to be easily navigated on various search engines. It is because ReactJS applications can run on the server, and the virtual DOM will be rendering and returning to the browser as a regular web page.
+The Benefit of Having JavaScript Library: Today, ReactJS gaining popularity among web developers. It is offering a very rich JavaScript library which provides more flexibility to the web developers to choose the way they want.
+Scope for Testing the Codes: ReactJS applications are easy to test. It offers a scope where the developer can test and debug their codes with the help of native tools.
+React Native
+React Native is an open-source JavaScript framework used for developing a mobile application for iOS Android, and Windows. It uses only JavaScript to build a cross-platform mobile app. React Native is same as React, but it uses native components instead of using web components as building blocks. It targets mobile platforms rather than the browser.
+
+
+Facebook develops the React Native in 2013 for its internal project Hackathon. In March 2015, Facebook announced that React Native is open and available on GitHub.
+
+React Native was initially developed for the iOS application. However, recently, it also supports the Android operating system.
+
+Advantages of React Native
+There are several advantages of React Native for building mobile applications. Some of them are given below:
+
+Cross-Platform Usage: It provides the facility of "Learn once write everywhere." It works for both platform Android as well as iOS devices.
+Class Performance: The code written in React Native are compiled into native code, which enables it for both operating systems as well as it functions in the same way on both the platforms.
+JavaScript: JavaScript knowledge is used to build native mobile apps.
+Community: The large community of ReactJS and React Native helps us to find any answer we require.
+Hot Reloading: Making a few changes in the code of your app will be immediately visible during development. If the business logic is changed, its reflection is live reloaded on screen.
+Improving with Time: Some features of iOS and Android are still not supported, and the community is always inventing the best practices.
+Native Components: We will need to write some platform specific code if we want to create native functionality, which is not designed yet.
+Existence is Uncertain: As Facebook develop this framework, its presence is uncertain since it keeps all the rights to kill off the project anytime. As the popularity of React Native rises, it is unlikely to happen.
+Disadvantage of React Native
+React Native is Still New and Immature: React Native is a newbie in Android and iOS programming languages and is still in its improvement stage, which can have a negative impact on the apps.
+Learning is Tough: React Native is not easy to learn, especially for a fresher in the app development field.
+It Lacks the Security Robustness: React Native is a JavaScript library and open-source framework, which creates a gap in the security robustness. When you are creating banking and financial apps where data is highly confidential, experts advice not to choose React Native.
+It Takes More Time to Initialize: React Native takes a lot of time for initializing the runtime even for the hi-tech gadgets and devices.
+ReactJS Vs React Native
+ReactJS and React Native
+SN	ReactJS	React Native
+1.	The ReactJS initial release was in 2013.	The React Native initial release was in 2015.
+2.	It is used for developing web applications.	It is used for developing mobile applications.
+3.	It can be executed on all platforms.	It is not platform independent. It takes more effort to be executed on all platforms.
+4.	It uses a JavaScript library and CSS for animations.	It comes with built-in animation libraries.
+5.	It uses React-router for navigating web pages.	It has built-in Navigator library for navigating mobile applications.
+6.	It uses HTML tags.	It does not use HTML tags.
+7.	It can use code components, which saves a lot of valuable time.	It can reuse React Native UI components & modules which allow hybrid apps to render natively.
+8.	It provides high security.	It provides low security in comparison to ReactJS.
+9.	In this, the Virtual DOM renders the browser code.	In this, Native uses its API to render code for mobile applications.

@@ -1,0 +1,45 @@
+Difference Between AngularJS and ReactJS
+AngularJS
+AngularJS is an open-source JavaScript framework used to build a dynamic web application. Misko Hevery and Adam Abrons developed AngularJS in 2009, and now Google maintained it. The latest version of Angular is 1.7.8 on March 11, 2019. It is based on HTML and JavaScript and mostly used for building a Single Page Application. It can be included to an HTML page with a <script> tag. It extends HTML by adding built-in attributes with the directive and binds data to HTML with Expressions.
+
+Features of AngularJS
+Data-binding: AngularJS follows the two-way data binding. It is the automatic synchronization of data between model and view components.
+POJO Model: AngularJS uses POJO (Plain Old JavaScript) model, which provides spontaneous and well-planned objects. The POJO model makes AngularJS self-sufficient and easy to use.
+Model View Controller(MVC) Framework: MVC is a software design pattern used for developing web applications. The working model of AngularJS is based on MVC patterns. The MVC Architecture in AngularJS is easy, versatile, and dynamic. MVC makes it easier to build a separate client-side application.
+Services: AngularJS has several built-in services such as $http to make an XMLHttpRequest.
+User interface with HTML: In AngularJS, User interfaces are built on HTML. It is a declarative language which has shorter tags and easy to comprehend. It provides an organized, smooth, and structured interface.
+Dependency Injection: AngularJS has a built-in dependency injection subsystem that helps the developer to create, understand, and test the applications easily.
+Active community on Google: AngularJS provides excellent community support. It is Because Google maintains AngularJS. So, if you have any maintenance issues, there are many forums available where you can get your queries solved.
+Routing: Routing is the transition from one view to another view. Routing is the key aspect of single page applications where everything comes in a single page. Here, developers do not want to redirect the users to a new page every time they click the menu. The developers want the content load on the same page with the URL changing.
+ReactJS
+ReactJS is an open-source JavaScript library used to build a user interface for Single Page Application. It is responsible only for the view layer of the application. It provides developers to compose complex UIs from a small and isolated piece of code called "components." ReactJS made of two parts first is components, that are the pieces that contain HTML code and what you want to see in the user interface, and the second one is HTML document where all your components will be rendered.
+
+Jordan Walke, who was a software engineer at Facebook, develops it. Initially, it was developed and maintained by Facebook and was later used in its products like WhatsApp & Instagram. Facebook developed ReactJS in 2011 for the newsfeed section, but it was released to the public in May 2013.
+
+
+Features of ReactJS
+JSX: JSX is a JavaScript syntax extension. The JSX syntax is processed into JavaScript calls of React Framework. It extends the ES6 so that HTML like text can co-exist with JavaScript React code.
+Components: ReactJS is all about components. ReactJS application is made up of multiple components, and each component has its logic and controls. These components can be reusable, which help you to maintain the code when working on larger scale projects.
+One-way Data Binding: ReactJS follows unidirectional data flow or one-way data binding. The one-way data binding gives you better control throughout the application. If the data flow is in another direction, then it requires additional features. It is because components are supposed to be immutable, and the data within them cannot be changed.
+Virtual DOM: A virtual DOM object is a representation of the real DOM object. Whenever any modifications happen in the web application, the entire UI is re-rendered in virtual DOM representation. Then, it checks the difference between the previous DOM representation and new DOM. Once it has done, the real DOM will update only the things that are changed. It makes the application faster, and there is no wastage of memory.
+Simplicity: ReactJS uses the JSX file, which makes the application simple and to code as well as understand. Also, ReactJS is a component-based approach which makes the code reusable as your need. It makes it simple to use and learn.
+Performance: ReactJS is known to be a great performer. The reason behind this is that it manages a virtual DOM. The DOM exists entirely in memory. Due to this, when we create a component, we did not write directly to the DOM. Instead, we are writing virtual Components that will turn into the DOM, leading to smoother and faster performance.
+AngularJS Vs. ReactJS
+AngularJS Vs ReactJS
+AngularJS	ReactJS
+Author	Google	Facebook Community
+Developer	Misko Hevery	Jordan Walke
+Initial Release	October 2010	March 2013
+Latest Version	Angular 1.7.8 on 11 March 2019.	React 16.8.6 on 27 March 2019
+Language	JavaScript, HTML	JSX
+Type	Open Source MVC Framework	Open Source JS Framework
+Rendering	Client-Side	Server-Side
+Packaging	Weak	Strong
+Data-Binding	Bi-directional	Uni-directional
+DOM	Regular DOM	Virtual DOM
+Testing	Unit and Integration Testing	Unit Testing
+App Architecture	MVC	Flux
+Dependencies	It manages dependencies automatically.	It requires additional tools to manage dependencies.
+Routing	It requires a template or controller to its router configuration, which has to be managed manually.	It doesn't handle routing but has a lot of modules for routing, eg., react-router.
+Performance	Slow	Fast, due to virtual DOM.
+Best For	It is best for single page applications that update a single view at a time.	It is best for single page applications that update multiple views at a time.

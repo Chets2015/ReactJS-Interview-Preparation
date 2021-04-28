@@ -1,0 +1,138 @@
+React Keys
+A key is a unique identifier. In React, it is used to identify which items have changed, updated, or deleted from the Lists. It is useful when we dynamically created components or when the users alter the lists. It also helps to determine which components in a collection needs to be re-rendered instead of re-rendering the entire set of components every time.
+
+Keys should be given inside the array to give the elements a stable identity. The best way to pick a key as a string that uniquely identifies the items in the list. It can be understood with the below example.
+
+Example
+const stringLists = [ 'Peter', 'Sachin', 'Kevin', 'Dhoni', 'Alisa' ];   
+    
+const updatedLists = stringLists.map((strList)=>{   
+    <li key={strList.id}> {strList} </li>;   
+});   
+If there are no stable IDs for rendered items, you can assign the item index as a key to the lists. It can be shown in the below example.
+
+
+Example
+const stringLists = [ 'Peter', 'Sachin', 'Kevin', 'Dhoni', 'Alisa' ];   
+    
+const updatedLists = stringLists.map((strList, index)=>{   
+    <li key={index}> {strList} </li>;   
+});  
+Note: It is not recommended to use indexes for keys if the order of the item may change in future. It creates confusion for the developer and may cause issues with the component state.
+Using Keys with component
+Consider you have created a separate component for ListItem and extracting ListItem from that component. In this case, you should have to assign keys on the <ListItem /> elements in the array, not to the <li> elements in the ListItem itself. To avoid mistakes, you have to keep in mind that keys only make sense in the context of the surrounding array. So, anything you are returning from map() function is recommended to be assigned a key.
+
+Example: Incorrect Key usage
+import React from 'react';   
+import ReactDOM from 'react-dom';   
+  
+function ListItem(props) {  
+  const item = props.item;  
+  return (  
+    // Wrong! No need to specify the key here.  
+    <li key={item.toString()}>  
+      {item}  
+    </li>  
+  );  
+}  
+function NameList(props) {  
+  const myLists = props.myLists;  
+  const listItems = myLists.map((strLists) =>  
+    // The key should have been specified here.  
+    <ListItem item={strLists} />  
+  );  
+  return (  
+    <div>  
+        <h2>Incorrect Key Usage Example</h2>  
+              <ol>{listItems}</ol>  
+    </div>  
+  );  
+}  
+const myLists = ['Peter', 'Sachin', 'Kevin', 'Dhoni', 'Alisa'];  
+ReactDOM.render(  
+  <NameList myLists={myLists}/>,  
+  document.getElementById('app')  
+);  
+export default App;  
+In the given example, the list is rendered successfully. But it is not a good practice that we had not assigned a key to the map() iterator.
+
+Output
+
+React Keys
+Example: Correct Key usage
+To correct the above example, we should have to assign key to the map() iterator.
+
+import React from 'react';   
+import ReactDOM from 'react-dom';   
+  
+function ListItem(props) {  
+  const item = props.item;  
+  return (  
+    // No need to specify the key here.  
+    <li> {item} </li>  
+  );  
+}  
+function NameList(props) {  
+  const myLists = props.myLists;  
+  const listItems = myLists.map((strLists) =>  
+    // The key should have been specified here.  
+    <ListItem key={myLists.toString()} item={strLists} />  
+  );  
+  return (  
+    <div>  
+        <h2>Correct Key Usage Example</h2>  
+            <ol>{listItems}</ol>  
+    </div>  
+  );  
+}  
+const myLists = ['Peter', 'Sachin', 'Kevin', 'Dhoni', 'Alisa'];  
+ReactDOM.render(  
+  <NameList myLists={myLists}/>,  
+  document.getElementById('app')  
+);  
+export default App;  
+Output
+
+React Keys
+Uniqueness of Keys among Siblings
+We had discussed that keys assignment in arrays must be unique among their siblings. However, it doesn't mean that the keys should be globally unique. We can use the same set of keys in producing two different arrays. It can be understood in the below example.
+
+Example
+import React from 'react';   
+import ReactDOM from 'react-dom';   
+function MenuBlog(props) {  
+  const titlebar = (  
+    <ol>  
+      {props.data.map((show) =>  
+        <li key={show.id}>  
+          {show.title}  
+        </li>  
+      )}  
+    </ol>  
+  );  
+  const content = props.data.map((show) =>  
+    <div key={show.id}>  
+      <h3>{show.title}: {show.content}</h3>      
+    </div>  
+  );  
+  return (  
+    <div>  
+      {titlebar}  
+      <hr />  
+      {content}  
+    </div>  
+  );  
+}  
+const data = [  
+  {id: 1, title: 'First', content: 'Welcome to JavaTpoint!!'},  
+  {id: 2, title: 'Second', content: 'It is the best ReactJS Tutorial!!'},  
+  {id: 3, title: 'Third', content: 'Here, you can learn all the ReactJS topics!!'}  
+];  
+ReactDOM.render(  
+  <MenuBlog data={data} />,  
+  document.getElementById('app')  
+);  
+export default App;  
+Output
+
+React Keys

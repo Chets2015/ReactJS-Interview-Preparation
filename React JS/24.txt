@@ -1,0 +1,63 @@
+React Lists
+Lists are used to display data in an ordered format and mainly used to display menus on websites. In React, Lists can be created in a similar way as we create lists in JavaScript. Let us see how we transform Lists in regular JavaScript.
+
+The map() function is used for traversing the lists. In the below example, the map() function takes an array of numbers and multiply their values with 5. We assign the new array returned by map() to the variable multiplyNums and log it.
+
+Example
+var numbers = [1, 2, 3, 4, 5];   
+const multiplyNums = numbers.map((number)=>{   
+    return (number * 5);   
+});   
+console.log(multiplyNums);   
+Output
+
+
+The above JavaScript code will log the output on the console. The output of the code is given below.
+
+[5, 10, 15, 20, 25]
+Now, let us see how we create a list in React. To do this, we will use the map() function for traversing the list element, and for updates, we enclosed them between curly braces {}. Finally, we assign the array elements to listItems. Now, include this new list inside <ul> </ul> elements and render it to the DOM.
+
+Example
+import React from 'react';   
+import ReactDOM from 'react-dom';   
+  
+const myList = ['Peter', 'Sachin', 'Kevin', 'Dhoni', 'Alisa'];   
+const listItems = myList.map((myList)=>{   
+    return <li>{myList}</li>;   
+});   
+ReactDOM.render(   
+    <ul> {listItems} </ul>,   
+    document.getElementById('app')   
+);   
+export default App;  
+Output
+
+React Lists
+Rendering Lists inside components
+In the previous example, we had directly rendered the list to the DOM. But it is not a good practice to render lists in React. In React, we had already seen that everything is built as individual components. Hence, we would need to render lists inside a component. We can understand it in the following code.
+
+Example
+import React from 'react';   
+import ReactDOM from 'react-dom';   
+  
+function NameList(props) {  
+  const myLists = props.myLists;  
+  const listItems = myLists.map((myList) =>  
+    <li>{myList}</li>  
+  );  
+  return (  
+    <div>  
+        <h2>Rendering Lists inside component</h2>  
+              <ul>{listItems}</ul>  
+    </div>  
+  );  
+}  
+const myLists = ['Peter', 'Sachin', 'Kevin', 'Dhoni', 'Alisa'];   
+ReactDOM.render(  
+  <NameList myLists={myLists} />,  
+  document.getElementById('app')  
+);  
+export default App;  
+Output
+
+React Lists

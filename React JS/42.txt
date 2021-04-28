@@ -1,0 +1,116 @@
+React Portals
+The React 16.0 version introduced React portals in September 2017. A React portal provides a way to render an element outside of its component hierarchy, i.e., in a separate component.
+
+Before React 16.0 version, it is very tricky to render the child component outside of its parent component hierarchy. If we do this, it breaks the convention where a component needs to render as a new element and follow a parent-child hierarchy. In React, the parent component always wants to go where its child component goes. That's why React portal concept comes in.
+
+Syntax
+ReactDOM.createPortal(child, container)  
+Here, the first argument (child) is the component, which can be an element, string, or fragment, and the second argument (container) is a DOM element.
+
+
+Example before React v16
+Generally, when you want to return an element from a component's render method, it is mounted as a new div into the DOM and render the children of the closest parent component.
+
+render() {  
+// React mounts a new div into the DOM and renders the children into it  
+  return (  
+   <div>  
+     {this.props.children}  
+   </div>  
+  );  
+}  
+Example using portal
+But, sometimes we want to insert a child component into a different location in the DOM. It means React does not want to create a new div. We can do this by creating React portal.
+
+render() {  
+ return ReactDOM.createPortal(  
+   this.props.children,  
+   myNode,  
+ );  
+}  
+Features
+It uses React version 16 and its official API for creating portals.
+It has a fallback for React version 15.
+It transports its children component into a new React portal which is appended by default to document.body.
+It can also target user specified DOM element.
+It supports server-side rendering
+It supports returning arrays (no wrapper div's needed)
+It uses <Portal /> and <PortalWithState /> so there is no compromise between flexibility and convenience.
+It doesn't produce any DOM mess.
+It has no dependencies, minimalistic.
+When to use?
+The common use-cases of React portal include:
+
+Modals
+Tooltips
+Floating menus
+Widgets
+Installation
+We can install React portal using the following command.
+
+$ npm install react-portal --save  
+Explanation of React Portal
+Create a new React project using the following command.
+
+$ npx create-react-app reactapp  
+Open the App.js file and insert the following code snippet.
+
+App.js
+
+import React, {Component} from 'react';    
+import './App.css'  
+import PortalDemo from './PortalDemo.js';  
+  
+class App extends Component {    
+    render () {    
+        return (    
+            <div className='App'>  
+         <PortalDemo />  
+    </div>    
+        );    
+    }    
+}    
+export default App;  
+The next step is to create a portal component and import it in the App.js file.
+
+PortalDemo.js
+
+import React from 'react'  
+import ReactDOM from 'react-dom'  
+  
+function PortalDemo(){  
+    return ReactDOM.createPortal(  
+      <h1>Portals Demo</h1>,  
+      document.getElementById('portal-root')  
+    )  
+}  
+export default PortalDemo  
+Now, open the Index.html file and add a <div id="portal-root"></div> element to access the child component outside the root node.
+
+Index.html
+
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8" />  
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1" />  
+    <meta name="theme-color" content="#000000" />  
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />  
+    <title>React App</title>  
+  </head>  
+  <body>  
+    <noscript>It is required to enable JavaScript to run this app.</noscript>  
+    <div id="root"></div>  
+    <div id="portal-root"></div>  
+  </body>  
+</html>  
+Output:
+
+When we execute the React app, we will get the following screen.
+
+React Portal
+Now, open the Inspect (ctrl + shift + I). In this window, select the Elements section and then click on the <div id="portal-root"></div> component. Here, we can see that each tag is under the "portal-root" DOM node, not the "root" DOM node. Hence, we can see that how React Portal provides the ability to break out of root DOM tree.
+
+React Portal
+Next TopicReact Error Boundaries

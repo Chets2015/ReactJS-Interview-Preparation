@@ -1,0 +1,81 @@
+React Events
+An event is an action that could be triggered as a result of the user action or system generated event. For example, a mouse click, loading of a web page, pressing a key, window resizes, and other interactions are called events.
+
+React has its own event handling system which is very similar to handling events on DOM elements. The react event handling system is known as Synthetic Events. The synthetic event is a cross-browser wrapper of the browser's native event.
+
+React Events
+Handling events with react have some syntactic differences from handling events on DOM. These are:
+
+
+React events are named as camelCase instead of lowercase.
+With JSX, a function is passed as the event handler instead of a string. For example:
+Event declaration in plain HTML:
+
+<button onclick="showMessage()">  
+       Hello JavaTpoint  
+</button>  
+Event declaration in React:
+
+<button onClick={showMessage}>  
+      Hello JavaTpoint  
+</button>  
+3. In react, we cannot return false to prevent the default behavior. We must call preventDefault event explicitly to prevent the default behavior. For example:
+
+In plain HTML, to prevent the default link behavior of opening a new page, we can write:
+
+<a href="#" onclick="console.log('You had clicked a Link.'); return false">  
+    Click_Me  
+</a>  
+In React, we can write it as:
+
+function ActionLink() {  
+    function handleClick(e) {  
+        e.preventDefault();  
+        console.log('You had clicked a Link.');  
+    }  
+    return (  
+        <a href="#" onClick={handleClick}>  
+              Click_Me  
+        </a>  
+    );  
+}  
+In the above example, e is a Synthetic Event which defines according to the W3C spec.
+
+Now let us see how to use Event in React.
+
+Example
+In the below example, we have used only one component and adding an onChange event. This event will trigger the changeText function, which returns the company name.
+
+import React, { Component } from 'react';  
+class App extends React.Component {  
+    constructor(props) {  
+        super(props);  
+        this.state = {  
+            companyName: ''  
+        };  
+    }  
+    changeText(event) {  
+        this.setState({  
+            companyName: event.target.value  
+        });  
+    }  
+    render() {  
+        return (  
+            <div>  
+                <h2>Simple Event Example</h2>  
+                <label htmlFor="name">Enter company name: </label>  
+                <input type="text" id="companyName" onChange={this.changeText.bind(this)}/>  
+                <h4>You entered: { this.state.companyName }</h4>  
+            </div>  
+        );  
+    }  
+}  
+export default App;  
+Output
+
+When you execute the above code, you will get the following output.
+
+React Events
+After entering the name in the textbox, you will get the output as like below screen.
+
+React Events
